@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment0.text=\r\n\ Moves\ the\ power\ up\ down\ the\ screen\ and\ removes\ it\ from\ the\ world\ if\ it\ reaches\ the\ bottom.\r\n
+comment1.params=
+comment1.target=void\ moveDown()
+comment1.text=\r\n\ Moves\ the\ power\ up\ down\ the\ screen\ by\ 3\ pixels.\r\n
+numComments=2

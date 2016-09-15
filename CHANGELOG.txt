@@ -1,0 +1,396 @@
+v0.1
+----
+
+SpaceWorld:
+Score bar and high score bar has been placed at the top left of the screen. The values do not change yet.
+Character icon and lives remaining are displayed at the bottom left.
+Player's ship is in the middle of the screen.
+Background has been added.
+
+v0.2
+----
+TitleScreen:
+Title screen has now been included.
+Play and instructions buttons have been added.
+Main program starts when play button is clicked on.
+
+SpaceWorld:
+Player can now move the ship around the screen.
+Player's ship now tilts depending on which direction it's moving.
+Title screen has now been included.
+Play and instructions buttons have been added.
+Main program starts when play button is clicked on.
+
+InstructionsButton:
+Gets bigger when mouse goes over it but clicking it does not do anything.
+
+PlayButton:
+Play button gets bigger depending on whether or not the mouse is on it.
+
+Character:
+Ship can move around the screen.
+
+v0.3
+----
+
+SpaceWorld:
+Removed background from SpaceWorld and made it an actor so it's position could be changed.
+Player can shoot a bullet by pressing z.
+
+Projectile:
+Added moveProjectile method.
+Added removeProjectile method.
+
+PlayerProjectile:
+Added constructor.
+Projectile now move up the screen.
+Projectiles will now be removed from the world when they reach the top of the screen.
+
+Background:
+Background now continuously moves downward.
+
+Character:
+A projectile can now spawn in front of the ship.
+Add fire delay so projectiles can't be spammed.
+
+v0.4
+----
+
+SpaceWorld:
+Changed instance variable from character to player.
+Changed all character commands to player commands.
+Added spawnEnemy method to spawn enemies onto the screen.
+
+Player(formerly known as Character):
+Renamed class from Character to Player.
+Player class is now a subclass of Character.
+Moved move method from Player class to Character class.
+
+EnemyBrown:
+The enemy will now be removed from the world if it has come in contact with a player projectile.
+
+Character:
+Added ship destroyed method.
+
+Counter:
+Removed LifeCounter class and changed Counter class constructor to have value as a parameter.
+
+v0.5
+----
+
+EnemyBrown:
+Enemy will no longer be removed from the world from this class.	
+Added instance variables fireProjectile and fireDelay.
+Enemy will now shoot projectiles.
+There is a delay in between shots.
+
+Projectile:
+Renamed removeProjectile method to edgeOfWorld.
+
+PlayerProjectile:
+Added checkHit method to remove the enemy the bullet comes in contact with.
+Added instance variable boolean hitShip.
+
+EnemyBrownProjectile:
+Added instance variables.
+Added constructor.
+Projectile now moves and will be removed if it reaches the edge of the world.
+
+SpaceWorld:
+Added instance variable boolean inWorld so only one enemy will spawn for testing purposes.
+
+v0.6
+----
+
+Player:
+Added hitByProjectile method.
+Called hitByProjectile method in act method.
+Added instance variable boolean alive.
+Added getAlive method.
+Player's ship is now removed when it gets hit by an enemy projectile.
+Added crashIntoEnemy method.
+The player's ship will now be removed when it comes in contact with an enemy.
+
+SpaceWorld:
+Added if statement in checkKeys method so it only runs if the player is alive.
+
+Character:
+Removed shipDestroyed method because removal of enemy ships are now done in PlayerProjectile class.
+
+v0.7
+----
+
+Created LifeIcon class.
+
+Counter:
+Replaced edited Counter class with original Counter class from moodle.
+Changed font from Sansserif to Bankgothic Lt BT.
+
+LifeCounter:
+Changed instance variable value from 0 to 2.
+Changed font from Sansserif to Bankgothic Lt BT.
+
+SpaceWorld:
+Changed lifeCounter from Counter to LifeCounter class.
+Used LifeIcon class for the player icon at the bottom left.
+Changed enemyBrown variable to array called brownEnemies.
+Added instance variable int wave.
+Changed spawning code so it only runs if inWorld is false, it initializes an array and spawns enemies, sets inWorld to true and increases wave counter.
+Added moveEnemy method to make enemies move.
+Added removeEnemy method so enemies will now be removed if they reach the edge of the world.
+
+EnemyBrown:
+Added instance variable boolean alive.
+Added getAlive method.
+Added setAliveToFalse method.
+Added removeShip method.
+Called removeShip in act method.
+Shortened bullet delay from 25 to 15.
+
+EnemyBrownProjectile:
+Changed ySpeed to 5.
+
+Player:
+Changed player hitbox to center of the ship.
+
+v0.8
+----
+
+Removed LifeCounter class.
+
+SpaceWorld:
+Created method nextWave and moved wave++ from spawnEnemy method to nextWave method.
+Added two instance variables: int enemiesInWave and int enemiesRemoved.
+Renamed boolean inWorld to enemiesInWorld.
+Changed initial value of wave from 0 to 1.
+Called nextWave() in act method.
+Added method addToEnemiesRemoved.
+Added wave 2 to spawnEnemy method.
+Added instance variable int spawnDelay.
+spawnDelay counter now increases in between waves and enemies will only spawn after a certain amount of time has passed.
+moveEnemy(), removeEnemy(), and nextWave() will only run if enemiesInWorld is true.
+Changed lifeCounter back from LifeCounter to Counter class.
+
+PlayerProjectile:
+Called method addToEnemiesRemoved when a hit is detected in the checkHit method.
+
+Counter:
+Added initial value as a parameter in the constructor.
+
+Player:
+Called the loseLife method located in the SpaceWorld class when player is hit by a projectile or when player crashes into an enemy.
+
+v0.9
+----
+
+SpaceWorld:
+Added method respawn so the player respawns when they die.
+Added instance variable int invincibleTimer.
+Increase the value of invincibleTimer and turn off invincbility once it has reached a certain number in the act method.
+The player's ship will now blink when they are invincible.
+Player cannot shoot if they are invincible.
+Added method int getLivesRemaining.
+Changed all calling of move method to moveShip method.
+Added addScore method.
+Only run the code in the respawn method if the player's exploding boolean is false.
+
+Player:
+Added method setAlive to change the alive variable.
+Added instance variable boolean invincible.
+Added method getInvincible.
+Added method setInvincible.
+The player can only get hit if they are not invincible; corresponding conditions have been added in hitByProjectile() and crashIntoEnemy().
+Lives will be subtracted when the player dies.
+Program stops if the player dies on their last life.
+Changed player removal code from getWorld().removeObject(this) to removeShip().
+Added instance variable int powerUpCount.
+Added method getPowerUp.
+Player can now get dropped power ups.
+Added instance variable int numberOfBullets and set it to 1.
+Added method upgradeWeapon.
+Added numberOfBullet conditions in shoot method.
+Player can now shoot more than one bullet if they collect enough power ups.
+50 points will be added to score when player collects a power up.
+Added array explosions.
+Added constructor where it populates explosions array.
+Added explode method.
+Added four instance variables:int explosionCounter, int explosionDelay, boolean exploding, and boolean loseLastLife.
+Show an explosion when the player dies.
+The ship will no longer be removed from hitByProjectile() or crashIntoEnemy().
+Ship will now be removed from explode method.
+Added method getExploding.
+Program will now be stopped in the explode method instead of the hit detection methods.
+Added exploding conditions in hitByProjectile() and crashIntoEnemy().
+Power ups will not be collected if the player is currently exploding.
+Player's power up count will go back to 0 if they die.
+
+PlayerProjectile:
+Rearranged code so it checks if an enemy is hit before it checks if the bullet has reached the edge of the world.
+Added instance variable boolean inWorld and set it to true.
+Set inWorld to false if the bullet hits an enemy.
+The bullet will only be checked for being at the edge of the world if inWorld is true.
+100 points will be added to score when the player destroys a brown ship.
+Removal of ships and etc. will only be run if the ship's beenHit variable is false.
+Change the ship's beenHit variable to true if it gets hit.
+
+Character:
+Renamed move method to moveShip.
+removeShip method is now located in this class.
+Added method dropPowerUp(int, int).
+
+PowerUp:
+Added moveDown method.
+Remove the power up if it has reached the bottom of the screen.
+
+EnemyBrown:
+Relocated removeShip method to Character class.
+Enemies will now drop power ups if their alive variable is false and they are not at the edge of the world.
+Added array explosions.
+Added five instance variables: int explosionCounter, int explosionDelay, booleand droppedPowerUp, boolean beenHit, and boolean exploding.
+Added constructor fo initialize and populate explosion array.
+Added explode method.
+Ships will only drop power ups if droppedPowerUp is false.
+Added method setBeenHitTrue.
+Added exploding condition in shoot method so ship will not shoot if it is currently exploding.
+
+v1.0
+----
+
+Created World InstructionsMenu.
+Created Actor BackButton.
+Created Actor EnemyPurple.
+Created Actor EnemyPurpleProjectile.
+Created Actor EnemyGreen.
+Created ACtor EnemyGreenProjectile.
+
+EnemyBrown:
+Renamed instance variable boolean beenHit to beenDestroyed.
+Changed all beenHit codes to beenDestroyed.
+Added instance variable int hp and set it to 2.
+Added method getHP.
+Added method loseHP.
+
+PlayerProjectile:
+Changed all beenHit codes to beenDestroyed.
+Hitting an enemy now causes it to lose HP.
+Enemy will only be removed and etc. if its HP is 0.
+
+BackButton:
+Back button gets bigger depending on whether or not the mouse is on it.
+
+InstructionsMenu:
+Back button has been added.
+Player can go back to title screen by clicking on the back button.
+
+SpaceWorld:
+Wave 2 enemies can be spawned, moved, and removed.
+Wave 3 enemies can be spawned, moved, and removed.
+
+Player:
+Added two static variables: xCoordinate and yCoordinate.
+Added method static int getXCoordinate.
+Added method static int getYCoordinate.
+Updated coordinates in act method.
+Player can now be hit by a purple enemy's projectile.
+Player can now collide with purple ships.
+Changed weapon upgrades from 15 and 30 power ups to 10 and 20 respectively.
+
+EnemyGreen:
+Copied everything from EnemyBrown into this class and renamed constructor.
+Changed hp to 4.
+
+EnemyGreenProjectile:
+Added everything from EnemyBrownProjectile into this class.
+Added instance variable boolean findPlayer.
+Projectile will move towards the player when spawned.
+
+PowerUp:
+Decreased move speed from 4 to 3.
+
+Background:
+Increased move speed from 3 to 7.
+
+Projectile:
+Projectiles will now be removed if they are on the left or right edges of the screen.
+
+EnemyPurple:
+Added everything from EnemyBrown into this class with a few changes made to fit this class.
+Changed hp to 3.
+Changed fireDelay from 15 to 10.
+
+EnemyPurpleProjectile:
+Copied everything from EnemyBrownProjectile and renamed constructor.
+Changed ySpeed from 5 to 3.
+
+v1.1
+----
+
+Created Actor EnemyYellow.
+Created Actor EnemyYellowProjectile.
+Created Actor HighScoreCounter.
+
+PlayerProjectile:
+Projectiles can now hit purple enemies.
+150 points will be added to score for destroying a purple ship.
+Projectiles can hit green and yellow enemies.
+200 points will be added to score for destroying a green ship.
+300 points will be added to score for destroying a yellow ship.
+
+EnemyPurpleProjectile:
+Changed ySpeed from 3 to 4.
+
+SpaceWorld:
+Added array purpleEnemies.
+Wave 4 enemies can be spawned, moved, and removed.
+Added array greenEnemies.
+Added array yellowEnemies.
+Wave 5 enemies can be spawned, moved, and removed.
+Wave 6 enemies can be spawned, moved, and removed.
+Wave 7 enemies can be spawned, moved, and removed.
+Wave 8 enemies can be spawned, moved, and removed.
+Wave 9 enemies can be spawned, moved, and removed.
+Wave 10 enemies can be spawned, moved, and removed.
+Added instance variable boolean allWavesCleared.
+After the player has gone through all 10 waves, get a random wave from waves 5-10 inclusive.
+Removed middle enemy from waves 2 and 7.
+Changed highScore from Counter class to HighScoreCounter class.
+Added instance variable GreenfootSound backgroundMusic.
+play background music in a loop in constructor.
+
+Character:
+Added method boolean edgeOfWorld().
+
+EnemyYellow:
+Copied everything from enemyBrown into this class and renamed constructor.
+Changed fire delay from 15 to 5.
+Added explosionSound.
+Play explosion sound when ship explodes.
+
+EnemyYellowProjectile:
+Copied everything from enemyBrownProjectile and renamed constructor.
+Changed ySpeed from 5 to 3.
+
+Player:
+Player can now collide with green and yellow ships.
+Player can now be hit by green and yellow ships' projectiles.
+Enemy projectiles will be removed from the world when the player collides with them.
+Added method boolean getLoseLastLife.
+Added explosionSound.
+Play explosion sound when player explodes.
+Program goes back to title screen when player dies.
+
+EnemyGreen:
+Ships now rotate to point towards player.
+Added explosionSound.
+Play explosion sound when ship explodes.
+
+HighScoreCounter:
+Changed value to a static variable.
+
+EnemyPurple:
+Added explosionSound.
+Play explosion sound when ship explodes.
+
+EnemyBrown:
+Added explosionSound.
+Play explosion sound when ship explodes.

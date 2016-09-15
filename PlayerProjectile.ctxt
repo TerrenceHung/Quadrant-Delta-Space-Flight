@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=xPosition\ yPosition
+comment0.target=PlayerProjectile(int,\ int)
+comment0.text=\r\n\ Constructor\ for\ class\ PlayerProjectile\r\n\ \r\n\ @param\ xPosition\ Determines\ the\ current\ x\ position\ of\ the\ projectile.\r\n\ @param\ yPosition\ Determines\ the\ current\ y\ position\ of\ the\ projectile.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Moves\ the\ projectile\ up\ the\ screen,\ checks\ if\ it\ hits\ an\ enemy,\ and\ removes\ projectile\ from\ screen.\r\n
+comment2.params=
+comment2.target=void\ checkHit()
+comment2.text=\r\n\ Checks\ if\ the\ projectile\ hits\ an\ enemy\ and\ sets\ the\ enemy's\ alive\ variable\ to\ false,\ sets\ hitShip\ to\ true,\ sets\ enemy's\ beenHit\ variable\ to\ true,\ add\ to\ enemiesRemoved\ in\ the\ world,\ and\ add\ points\ for\ destroying\ enemies.\r\n
+numComments=3

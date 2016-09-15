@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=xMove\ yMove
+comment0.target=void\ moveShip(int,\ int)
+comment0.text=\r\n\ Moves\ a\ spaceship\ around\ the\ screen.\r\n\ \r\n\ @param\ xMove\ How\ much\ the\ ship\ will\ move\ in\ the\ x\ direction\r\n\ @param\ yMove\ How\ much\ the\ ship\ will\ move\ in\ the\ y\ direction\r\n
+comment1.params=
+comment1.target=void\ removeShip()
+comment1.text=\r\n\ Removes\ the\ ship\ from\ the\ world.\r\n
+comment2.params=xPosition\ yPosition
+comment2.target=void\ dropPowerUp(int,\ int)
+comment2.text=\r\n\ Drop\ a\ power\ up\ where\ the\ enemy\ currently\ is.\r\n
+comment3.params=
+comment3.target=boolean\ edgeOfWorld()
+comment3.text=\r\n\ Checks\ if\ the\ ship\ is\ at\ the\ edge\ of\ the\ world.\r\n\ \r\n\ @return\ boolean\ Return\ true\ if\ the\ ship\ is\ at\ the\ edge\ of\ the\ world.\r\n
+numComments=4

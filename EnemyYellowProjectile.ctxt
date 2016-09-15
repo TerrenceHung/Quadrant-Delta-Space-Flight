@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=xPosition\ yPosition
+comment0.target=EnemyYellowProjectile(int,\ int)
+comment0.text=\r\n\ Constructor\ for\ class\ EnemyYellowProjectile\r\n\ \r\n\ @param\ xPosition\ Determines\ the\ current\ x\ position\ of\ the\ projectile.\r\n\ @param\ yPosition\ Determines\ the\ current\ y\ position\ of\ the\ projectile.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Moves\ the\ projectile\ down\ the\ screen,\ and\ removes\ it\ from\ the\ world.\r\n
+numComments=2

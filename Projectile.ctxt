@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=xSpeed\ ySpeed
+comment0.target=void\ moveProjectile(int,\ int)
+comment0.text=\r\n\ Moves\ the\ projectile\ on\ the\ screen.\r\n\ \r\n\ @param\ xSpeed\ The\ speed\ the\ projectile\ will\ move\ in\ the\ x\ direction.\r\n\ @param\ ySpeed\ The\ speed\ the\ projectile\ will\ move\ in\ the\ y\ direction.\r\n
+comment1.params=
+comment1.target=void\ edgeOfWorld()
+comment1.text=\r\n\ Removes\ the\ projectile\ if\ it\ is\ on\ the\ edge\ of\ the\ screen.\r\n
+numComments=2
